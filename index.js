@@ -19,4 +19,7 @@ app.use(cors({ Credential: true, origin: 'http://localhost3000' }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(router);
-app.listen(5000, ()=> console.log('Server Running at port 5000'));
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+    console.log("server up and running on PORT :", port);
+});
